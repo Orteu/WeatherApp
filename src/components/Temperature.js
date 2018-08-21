@@ -34,7 +34,6 @@ const Temperature = ({ temperature, weatherState }) => (
 );
 
 //Usando PropTypes sobre un elemento
-//Snippet using pts, ptn
 Temperature.propTypes = {
   temperature: PropTypes.number,
   weatherState: PropTypes.string
