@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import WeatherComponent from "./components/WeatherComponent";
+import WeatherComponent from "./components/WeatherComponent/";
 
 
 class App extends Component {
