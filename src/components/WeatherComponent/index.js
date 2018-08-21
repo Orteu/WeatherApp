@@ -3,11 +3,11 @@ import Location from './Location';
 import WeatherExtraInfo from './WeatherExtraInfo';
 import './style.css';
 
-const Index = () => (
+const WeatherComponent = () => (
     <div className="container">
-        <Location city={"Palma"}></Location>
-        <WeatherExtraInfo humidity={80} wind={10}/>
+        <Location city={"Palma"} />
+        <WeatherExtraInfo humidity={80} wind={10} temperature={28}/>
     </div>
 );
 
-export default Index;
+export default WeatherComponent;
