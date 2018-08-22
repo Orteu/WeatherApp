@@ -8,19 +8,12 @@ const location = "Palma de Mallorca,es";
 const api_key = "44fa2ff95e24fb821c0288b95d45a743";
 const api_url = `http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${api_key}&units=metric`;
 
-const data = {
-    temperature: 20,
-    humidity: 10,
-    wind: 10,
-    weatherState: 'cloudy'
-};
-
 class WeatherComponent extends Component {
     constructor(){
         super();
         this.state = {
             city: "Palma de Mallorca",
-            data
+            data: null
         }
     }
 
@@ -43,7 +36,7 @@ class WeatherComponent extends Component {
         return(
             <div className="container">
                 <Location city={city}/>
-                <WeatherExtraInfo data={data}/><br/>
+                {data ? <WeatherExtraInfo data={data}/> : 'Loading...'}<br/>
                 <button onClick={this.refreshWeather}>Refresh</button>
             </div>
         );
