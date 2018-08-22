@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Location from './Location';
 import WeatherExtraInfo from './WeatherExtraInfo';
 import './style.css';
@@ -15,12 +15,11 @@ const data = {
     weatherState: 'cloudy'
 };
 
-class WeatherComponent extends React.Component {
-
+class WeatherComponent extends Component {
     constructor(){
         super();
         this.state = {
-            city: "Miami",
+            city: "Palma de Mallorca",
             data
         }
     }
@@ -34,6 +33,10 @@ class WeatherComponent extends React.Component {
             this.setState({ data })
         });
     };
+
+    componentWillMount() {
+
+    }
 
     render () {
         const { city, data } = this.state;
