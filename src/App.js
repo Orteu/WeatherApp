@@ -7,7 +7,7 @@ const cities = ["Palma de Mallorca", "Manchester", "New York"];
 
 class App extends Component {
     handleSelectedLocation = city => {
-        console.log(city);
+        console.log(`handleSelectedLocation ${city}`);
     };
     render() {
         return (
