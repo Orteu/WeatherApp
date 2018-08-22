@@ -1,6 +1,7 @@
 import React from 'react';
 import Location from './Location';
 import WeatherExtraInfo from './WeatherExtraInfo';
+import { sun } from './../../constants/weathers'
 import './style.css';
 
 const location = "Palma de Mallorca,es";
@@ -24,12 +25,33 @@ class WeatherComponent extends React.Component {
         }
     }
 
+    getWeatherState = weather => {
+        return sun;
+    };
+
+    getData = weather_data => {
+        const { humidity, temp } = weather_data.main;
+        const { speed } = weather_data.wind;
+        const weatherState = this.getWeatherState(this.weather);
+
+        const data = {
+            humidity,
+            //We get Kelvin from the API and we pass it to Celsius
+            temperature: temp - 273.15,
+            wind: speed,
+            weatherState
+        };
+        return data;
+    };
+
     refreshWeather = () => {
-        fetch(api_url);
-        // this.setState({
-        //     data: data2
-        // });
-        console.log("Weather updated");
+        fetch(api_url).then( data => {
+            return data.json();
+        }).then( weather_data => {
+            debugger;
+            const data = this.getData(weather_data);
+            this.setState({ data })
+        });
     };
 
     render () {
