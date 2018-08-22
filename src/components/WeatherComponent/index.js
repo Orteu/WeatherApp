@@ -3,13 +3,14 @@ import Location from './Location';
 import WeatherExtraInfo from './WeatherExtraInfo';
 import './style.css';
 
+const data = {
+    temperature: 20,
+    humidity: 10,
+    wind: 10,
+    weatherState: 'cloudy'
+};
+
 const WeatherComponent = () => {
-    const data = {
-        temperature: 20,
-        humidity: 10,
-        wind: 10,
-        weatherState: 'cloudy'
-    };
     return(
         <div className="container">
             <Location city={"Palma"}/>
