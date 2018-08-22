@@ -35,7 +35,7 @@ class WeatherComponent extends Component {
     };
 
     componentWillMount() {
-
+        this.refreshWeather();
     }
 
     render () {
