@@ -3,6 +3,7 @@ import Location from './Location';
 import WeatherExtraInfo from './WeatherExtraInfo';
 import './style.css';
 import transformWeather from './../../services/transformWeather';
+import CircularProgress from 'material-ui/CircularProgress';
 
 const location = "Palma de Mallorca,es";
 const api_key = "44fa2ff95e24fb821c0288b95d45a743";
@@ -21,7 +22,6 @@ class WeatherComponent extends Component {
         fetch(api_url).then( data => {
             return data.json();
         }).then( weather_data => {
-            debugger;
             const data = transformWeather(weather_data);
             this.setState({ data })
         });
@@ -36,8 +36,8 @@ class WeatherComponent extends Component {
         return(
             <div className="container">
                 <Location city={city}/>
-                {data ? <WeatherExtraInfo data={data}/> : 'Loading...'}<br/>
-                <button onClick={this.refreshWeather}>Refresh</button>
+                {data ? <WeatherExtraInfo data={data}/> :
+                        <CircularProgress size={50} thickness={4}/>}<br/>
             </div>
         );
     }
