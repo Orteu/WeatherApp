@@ -3,10 +3,10 @@ import WeatherComponent from "./WeatherComponent";
 
 const LocationList = () => (
   <div>
-      <WeatherComponent city={"Palma"}/>
+      <WeatherComponent city={"Palma de Mallorca"}/>
       <WeatherComponent city={"Manchester"}/>
       <WeatherComponent city={"New York"}/>
-      <WeatherComponent city={"Zagreb"}/>
+      <WeatherComponent city={"Zurich"}/>
 
   </div>
 );
