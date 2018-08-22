@@ -28,14 +28,18 @@ class WeatherComponent extends React.Component {
     }
 
     refreshWeather = () => {
+        this.setState({
+            data: data2
+        });
         console.log("Weather updated");
     };
 
     render () {
+        const { city, data } = this.state;
         return(
             <div className="container">
-                <Location city={this.state.city}/>
-                <WeatherExtraInfo data={this.state.data}/>
+                <Location city={city}/>
+                <WeatherExtraInfo data={data}/>
                 <button onClick={this.refreshWeather}>Refresh</button>
             </div>
         );
