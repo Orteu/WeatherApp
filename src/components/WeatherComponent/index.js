@@ -6,7 +6,7 @@ import './style.css';
 
 const location = "Palma de Mallorca,es";
 const api_key = "44fa2ff95e24fb821c0288b95d45a743";
-const api_url = `http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${api_key}`;
+const api_url = `http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${api_key}&units=metric`;
 
 const data = {
     temperature: 20,
@@ -36,8 +36,7 @@ class WeatherComponent extends React.Component {
 
         const data = {
             humidity,
-            //We get Kelvin from the API and we pass it to Celsius
-            temperature: temp - 273.15,
+            temperature: temp,
             wind: speed,
             weatherState
         };
