@@ -26,20 +26,24 @@ const getWeatherIcon = weatherState => {
     return (<WeatherIcons name={stateToIconName(weatherState)} size="2x"/>);
 };
 
-const WeatherExtraInfo = ( {humidity, wind, temperature, weatherState} ) => (
-    <div>
-        <span>{`${temperature} ºC  `}</span>
-        {getWeatherIcon(weatherState)}<br/><br/>
-        <span>{`${humidity} % - `}</span>
-        <span>{`${wind} m/s `}</span>
-    </div>
-);
+const WeatherExtraInfo = ( {data} ) => {
+    const { temperature, humidity, weatherState, wind } = data;
+    return (
+        <div>
+            <span>{`${temperature} ºC  `}</span>
+            {getWeatherIcon(weatherState)}<br/><br/>
+            <span>{`${humidity} % - `}</span>
+            <span>{`${wind} m/s `}</span>
+        </div>
+    );
+};
 
 WeatherExtraInfo.propTypes = {
-    humidity: PropTypes.number.isRequired,
-    wind: PropTypes.string.isRequired,
-    temperature: PropTypes.number,
-    weatherState: PropTypes.string
+    data: PropTypes.shape({
+        temperature: PropTypes.number.isRequired,
+        humidity: PropTypes.number.isRequired,
+        wind: PropTypes.number.isRequired,
+    })
 };
 
 export default WeatherExtraInfo;
