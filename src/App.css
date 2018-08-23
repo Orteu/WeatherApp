@@ -29,11 +29,12 @@
 
 .weatherDetail {
   background: antiquewhite;
-  height: 84.5vh;
+  height: 86vh;
   width: 100%;
 }
 
 .Locations{
     background: antiquewhite;
     height: auto;
+    width: 100%;
 }
