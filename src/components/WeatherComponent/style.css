@@ -1,7 +1,29 @@
-.container {
-    padding-left: 20px;
+.contenedor {
+    padding: 15px;
+    margin-top: 5px;
     margin-left: 15px;
     margin-right: 15px;
     width: calc(100% - 25px);
     height: auto;
+    border-radius: 0px 0px 0px 0px;
+    -moz-border-radius: 0px 0px 0px 0px;
+    -webkit-border-radius: 0px 0px 0px 0px;
+    border: 0px solid #9e739e;
+    z-index:0;
+    background: #262626;
+}
+h1{
+    color: azure;
+}
+
+.contenedor > div > span {
+    color: azure;
+}
+
+.contenedor > div > i {
+    color: azure;
+}
+
+.contenedor > div > svg {
+    color: azure;
 }
