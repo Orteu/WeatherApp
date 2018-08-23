@@ -23,19 +23,21 @@
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 .weatherDetail {
-  background: antiquewhite;
-  height: 69vh;
-  width: 100%;
+    background: antiquewhite;
+    height: 74vh;
+    width: 100%;
+    display: flex;
 }
 
 .Locations{
     background: antiquewhite;
     height: auto;
-    width: 100%;
+    width: calc(100% - 40px);
     padding: 20px;
+    display: flex;
 }
