@@ -1,12 +1,17 @@
-.locationList{
-
-}
-
 /* This means it will only affect till 48em */
 @media (max-width: 48em){
     .locationList{
         max-height: 45vh;
         overflow: auto;
+        width: 100%;
+    }
+    .weatherDetail{
+        margin-top: 20px;
+        max-height: 45vh;
         margin-bottom: 20px;
     }
+}
+
+.forecast_title{
+    text-align: center;
 }

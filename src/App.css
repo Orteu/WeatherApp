@@ -29,9 +29,11 @@
 
 .weatherDetail {
     background: antiquewhite;
-    height: 74vh;
-    width: 100%;
+    height: 65vh;
+    width: calc(100% - 40px);
     display: flex;
+    padding: 20px;
+
 }
 
 .Locations{

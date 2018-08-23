@@ -57,7 +57,7 @@ class App extends Component {
                                 <div className="weatherDetail">
                                     {
                                         !city ?
-                                            <h1>Selecciona una ciudad</h1>:
+                                            <h2>Selecciona una ciudad</h2>:
                                             <ForecastExtended city={ city }/>
 
                                     }
