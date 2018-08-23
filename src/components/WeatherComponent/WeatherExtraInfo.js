@@ -31,7 +31,7 @@ const WeatherExtraInfo = ( {data} ) => {
     return (
         <div>
             <span>{`${temperature} ºC  `}</span>
-            {getWeatherIcon(weatherState)}<br/><br/>
+            {getWeatherIcon(weatherState)}<br/>
             <span>{`${humidity} % - `}</span>
             <span>{`${wind} m/s `}</span>
         </div>
