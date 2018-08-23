@@ -1,0 +1,12 @@
+.locationList{
+
+}
+
+/* This means it will only affect till 48em */
+@media (max-width: 48em){
+    .locationList{
+        max-height: 45vh;
+        overflow: auto;
+        margin-bottom: 20px;
+    }
+}
