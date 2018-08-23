@@ -29,7 +29,7 @@
 
 .weatherDetail {
   background: antiquewhite;
-  height: 86vh;
+  height: 69vh;
   width: 100%;
 }
 
@@ -37,4 +37,5 @@
     background: antiquewhite;
     height: auto;
     width: 100%;
+    padding: 20px;
 }

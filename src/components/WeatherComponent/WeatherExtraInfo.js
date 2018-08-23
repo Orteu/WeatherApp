@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { cloudy, rain, snow, sun, thunder, drizzle } from '../../constants/weathers';
 import WeatherIcons from "react-weathericons";
+import { FaTint, FaFeather } from 'react-icons/fa';
 
 const stateToIconName = weatherState => {
     switch (weatherState) {
@@ -30,10 +31,10 @@ const WeatherExtraInfo = ( {data} ) => {
     const { temperature, humidity, weatherState, wind } = data;
     return (
         <div>
-            <span>{`${temperature} ºC  `}</span>
-            {getWeatherIcon(weatherState)}<br/>
-            <span>{`${humidity} % - `}</span>
-            <span>{`${wind} m/s `}</span>
+            <span>{`${temperature} ºC  `} &nbsp; </span>
+            {getWeatherIcon(weatherState)}<br/><br/>
+            <span>{`${humidity} % `}</span><FaTint/>
+            <span>{` - ${wind} m/s `}</span><FaFeather/>
         </div>
     );
 };

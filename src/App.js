@@ -7,6 +7,7 @@ import './App.css';
 import LocationList from "./components/LocationList";
 import ForecastExtended from "./components/ForecastExtended";
 
+
 import * as Colors from 'material-ui/styles/colors';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
@@ -32,8 +33,6 @@ class App extends Component {
 
     handleSelectedLocation = city => {
         this.setState({ city });
-        console.log(`handleSelectedLocation ${city}`);
-
     };
     render() {
         const {city} = this.state;
