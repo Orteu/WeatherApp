@@ -28,7 +28,12 @@
 }
 
 .weatherDetail {
-  background: grey;
-  height: 90vh;
+  background: antiquewhite;
+  height: 92vh;
   width: 100%;
+}
+
+.Locations{
+    background: antiquewhite;
+    height: 92vh;
 }

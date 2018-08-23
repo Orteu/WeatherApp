@@ -1,5 +1,7 @@
 .container {
-    background: antiquewhite;
-    padding: 15px;
-    margin: 15px;
+    padding: 35px;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: calc(100% - 30px);
+    height: auto;
 }
