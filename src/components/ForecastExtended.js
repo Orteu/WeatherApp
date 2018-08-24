@@ -18,7 +18,7 @@ class ForecastExtended extends Component {
     }
 
     updateCity = city => {
-        const url_forecast = `${url}?q=${this.props.city}&appid=${api_key}&units=metric`;
+        const url_forecast = `${url}?q=${city}&appid=${api_key}&units=metric`;
         fetch(url_forecast).then(
             data => (data.json())
         ).then(
@@ -36,7 +36,7 @@ class ForecastExtended extends Component {
      componentWillReceiveProps(nextProps) {
         if(nextProps.city !== this.props.city){
             this.setState({forecastData: null});
-            this.updateCity(this.props.city);
+            this.updateCity(nextProps.city);
         }
      }
 
