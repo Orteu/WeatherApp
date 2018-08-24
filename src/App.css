@@ -49,3 +49,14 @@
     display: flex;
     z-index: 20;
 }
+
+@media (max-width: 48em){
+    .Locations{
+        background: antiquewhite;
+        height: 80vh;
+        max-height: 45vh;
+        padding: 20px;
+        display: flex;
+        z-index: 20;
+    }
+}

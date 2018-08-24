@@ -1,1 +1,0 @@
-Weather Aplication created using React.
