@@ -11,6 +11,7 @@
     border: 0px solid #9e739e;
     z-index:0;
     background: #262626;
+    cursor: pointer;
 }
 h1{
     color: azure;

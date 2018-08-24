@@ -6,24 +6,6 @@ import CircularProgress from "material-ui/CircularProgress";
 import transformWeather from "../services/transformWeather";
 import transformForecast from "../services/transformForecast";
 
-/*
-const weekDaysList = [
-    'Lunes',
-    'Martes',
-    'Miercoles',
-    'Jueves',
-    'Viernes',
-    'Sabado',
-    'Domingo'
-];
-
-const data = {
-    humidity: 10,
-    temperature: 25,
-    wind: 10
-};
-*/
-
 const api_key = "44fa2ff95e24fb821c0288b95d45a743";
 const url = `http://api.openweathermap.org/data/2.5/forecast`;
 
@@ -36,19 +18,27 @@ class ForecastExtended extends Component {
         }
     }
 
-    componentDidMount() {
-        const url_forecast = `${url}?q=${this.props.city}&appid=${api_key}`;
+    updateCity = city => {
+        const url_forecast = `${url}?q=${this.props.city}&appid=${api_key}&units=metric`;
         fetch(url_forecast).then(
             data => (data.json())
         ).then(
             weather_data => {
-                console.log(weather_data);
                 const forecastData = transformForecast(weather_data);
-                console.log(forecastData);
                 this.setState({forecastData });
             }
         );
+    };
+
+    componentDidMount() {
+        this.updateCity(this.props.city);
     }
+
+     componentWillReceiveProps(nextProps) {
+        if(nextProps.city !== this.props.city){
+            this.updateCity(nextProps.city);
+        }
+     }
 
     renderDays = (forecastData) =>{
         return forecastData.map( forecast =>

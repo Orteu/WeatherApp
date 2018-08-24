@@ -37,6 +37,10 @@
     overflow: auto;
 }
 
+.weatherDetail > div{
+    width: 100%;
+}
+
 .Locations{
     background: antiquewhite;
     height: 80vh;
