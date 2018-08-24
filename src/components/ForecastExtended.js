@@ -3,11 +3,10 @@ import PropTypes from 'prop-types';
 import ForecastItem from './ForecastItem';
 import './style.css';
 import CircularProgress from "material-ui/CircularProgress";
-import transformWeather from "../services/transformWeather";
 import transformForecast from "../services/transformForecast";
 
 const api_key = "44fa2ff95e24fb821c0288b95d45a743";
-const url = `http://api.openweathermap.org/data/2.5/forecast`;
+const url = `https://api.openweathermap.org/data/2.5/forecast`;
 
 class ForecastExtended extends Component {
 

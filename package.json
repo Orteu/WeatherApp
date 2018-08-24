@@ -1,6 +1,6 @@
 {
   "name": "weatherapp",
-  "homepage": "http://orteu.github.io/WeatherApp",
+  "homepage": "https://orteu.github.io/WeatherApp",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

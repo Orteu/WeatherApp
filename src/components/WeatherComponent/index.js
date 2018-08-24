@@ -19,7 +19,7 @@ class WeatherComponent extends Component {
 
     componentWillMount() {
         const {city} = this.state;
-        const api_url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}&units=metric`;
+        const api_url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}&units=metric`;
         fetch(api_url).then( data => {
             return data.json();
         }).then( weather_data => {
