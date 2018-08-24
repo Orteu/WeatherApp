@@ -29,17 +29,17 @@
 
 .weatherDetail {
     background: antiquewhite;
-    height: 78.5vh;
+    height: 80vh;
     width: calc(100% - 40px);
     display: flex;
     padding: 20px;
-    max-height: 78.5vh;
+    max-height: 80vh;
     overflow: auto;
 }
 
 .Locations{
     background: antiquewhite;
-    height: auto;
+    height: 80vh;
     width: calc(100% - 40px);
     padding: 20px;
     display: flex;

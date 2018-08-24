@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ForecastItem from './ForecastItem';
 import './style.css';
+import CircularProgress from "material-ui/CircularProgress";
 
+/*
 const weekDaysList = [
     'Lunes',
     'Martes',
@@ -18,26 +20,46 @@ const data = {
     temperature: 25,
     wind: 10
 };
-
+*/
 class ForecastExtended extends Component {
 
+    constructor(){
+        super();
+        this.state = {
+            forecastData : null
+        }
+    }
+
     renderDays = () =>{
-        return weekDaysList.map( day =>
+        /*return weekDaysList.map( day =>
             <div className="dayWeather">
                 <ForecastItem weekDay={day} time={10} data={data}/>
             </div>
+        );*/
+        return ("Render items");
+    };
+
+    renderProgressCircular = () => {
+        return (
+            <center>
+                <CircularProgress size={50} thickness={4}/>
+            </center>
         );
     };
 
     render() {
         const city = this.props.city;
+        const { forecastData } = this.state;
         return (
             <div>
                 <div className='forecast_title'>
                     <h2 >Pronóstico para {city} </h2>
                 </div>
                 <div>
-                    {this.renderDays()}
+                    {forecastData ?
+                        this.renderDays() :
+                        this.renderProgressCircular()
+                    }
                 </div>
             </div>
 
