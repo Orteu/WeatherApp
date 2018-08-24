@@ -14,8 +14,36 @@
 
 .locationList{
     z-index: 10;
+    width: 85%;
 }
 
 .forecast_title{
     text-align: center;
+}
+
+.dayWeather{
+    background: #262626;
+    margin: 8px;
+    padding: 5px;
+
+}
+
+.dayWeather > div > div > span {
+    color: azure;
+}
+
+.dayWeather > div > div > i {
+    color: azure;
+}
+
+.dayWeather > div > div >svg {
+    color: azure;
+}
+
+.dayWeather > div > div {
+    color: azure;
+}
+
+.dayWeather > div {
+    margin: 10px;
 }
