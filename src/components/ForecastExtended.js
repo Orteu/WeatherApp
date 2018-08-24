@@ -4,6 +4,7 @@ import ForecastItem from './ForecastItem';
 import './style.css';
 import CircularProgress from "material-ui/CircularProgress";
 import transformWeather from "../services/transformWeather";
+import transformForecast from "../services/transformForecast";
 
 /*
 const weekDaysList = [
@@ -42,9 +43,10 @@ class ForecastExtended extends Component {
         ).then(
             weather_data => {
                 console.log(weather_data);
-
+                const forecastData = transformForecast(weather_data);
+                this.setState({forecastData });
             }
-        )
+        );
     }
 
     renderDays = () =>{
