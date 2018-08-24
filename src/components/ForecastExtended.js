@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import ForecastItem from './ForecastItem';
 import './style.css';
 import CircularProgress from "material-ui/CircularProgress";
+import transformWeather from "../services/transformWeather";
 
 /*
 const weekDaysList = [
@@ -21,6 +22,10 @@ const data = {
     wind: 10
 };
 */
+
+const api_key = "44fa2ff95e24fb821c0288b95d45a743";
+const url = `http://api.openweathermap.org/data/2.5/forecast`;
+
 class ForecastExtended extends Component {
 
     constructor(){
@@ -28,6 +33,18 @@ class ForecastExtended extends Component {
         this.state = {
             forecastData : null
         }
+    }
+
+    componentDidMount() {
+        const url_forecast = `${url}?q=${this.props.city}&appid=${api_key}`;
+        fetch(url_forecast).then(
+            data => (data.json())
+        ).then(
+            weather_data => {
+                console.log(weather_data);
+
+            }
+        )
     }
 
     renderDays = () =>{
