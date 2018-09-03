@@ -59,7 +59,6 @@ class App extends Component {
                                         !city ?
                                             <h2>Selecciona una ciudad</h2>:
                                             <ForecastExtended city={ city }/>
-
                                     }
                                 </div>
                             </Paper>
