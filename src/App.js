@@ -1,21 +1,22 @@
+// Imports from external libraries
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Paper from 'material-ui/Paper';
 import AppBar from 'material-ui/AppBar';
 import { Grid, Row, Col } from 'react-flexbox-grid';
-import { createStore } from 'redux';
-import './App.css';
-import LocationList from "./components/LocationList";
-import ForecastExtended from "./components/ForecastExtended";
-
-
 import * as Colors from 'material-ui/styles/colors';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
+// Import from own app
+import './App.css';
+import LocationList from "./components/LocationList";
+import ForecastExtended from "./components/ForecastExtended";
+import { setCity } from "./actions";
+import { store } from "./store";
+
+
 // Cities Array while we can't get them from user
 const cities = ["Palma de Mallorca", "Manchester", "New York", "Zagreb"];
-
-const store = createStore(() => {}, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 // AppBar Settings
 const muiTheme = getMuiTheme({
@@ -36,8 +37,7 @@ class App extends Component {
 
     handleSelectedLocation = city => {
         this.setState({ city });
-        const action = { type: 'setCity', value: city };
-        store.dispatch(action);
+        store.dispatch(setCity(city));
     };
     render() {
         const {city} = this.state;
