@@ -17,6 +17,17 @@ class ForecastExtended extends Component {
         }
     }
 
+    componentDidMount() {
+        this.updateCity(this.props.city);
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if(nextProps.city !== this.props.city){
+            this.setState({forecastData: null});
+            this.updateCity(nextProps.city);
+        }
+    }
+
     updateCity = city => {
         const url_forecast = `${url}?q=${city}&appid=${api_key}&units=metric`;
         fetch(url_forecast).then(
@@ -28,17 +39,6 @@ class ForecastExtended extends Component {
             }
         );
     };
-
-    componentDidMount() {
-        this.updateCity(this.props.city);
-    }
-
-     componentWillReceiveProps(nextProps) {
-        if(nextProps.city !== this.props.city){
-            this.setState({forecastData: null});
-            this.updateCity(nextProps.city);
-        }
-     }
 
     renderDays = (forecastData) =>{
         return forecastData.map( forecast =>
