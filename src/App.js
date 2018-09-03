@@ -1,5 +1,6 @@
 // Imports from external libraries
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Paper from 'material-ui/Paper';
 import AppBar from 'material-ui/AppBar';
@@ -12,7 +13,6 @@ import './App.css';
 import LocationList from "./components/LocationList";
 import ForecastExtended from "./components/ForecastExtended";
 import { setCity } from "./actions";
-import { store } from "./store";
 
 
 // Cities Array while we can't get them from user
@@ -37,8 +37,9 @@ class App extends Component {
 
     handleSelectedLocation = city => {
         this.setState({ city });
-        store.dispatch(setCity(city));
+        this.props.setCity(city);
     };
+
     render() {
         const {city} = this.state;
         return (
@@ -75,4 +76,11 @@ class App extends Component {
     }
 }
 
-export default App;
+
+const mapDispatchToPropsActions = dispatch => ({
+    setCity: value => dispatch(setCity(value))
+});
+const AppConnected = connect(null, mapDispatchToPropsActions)(App);
+
+export default AppConnected;
+
