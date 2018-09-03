@@ -1,6 +1,5 @@
 // Imports from external libraries
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Paper from 'material-ui/Paper';
 import AppBar from 'material-ui/AppBar';
@@ -8,11 +7,11 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 import * as Colors from 'material-ui/styles/colors';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
+
 // Import from own app
 import './App.css';
-import LocationList from "./components/LocationList";
-import ForecastExtended from "./components/ForecastExtended";
-import { setCity } from "./actions";
+import ForecastExtendedContainer from "./containers/ForecastExtendedContainer";
+import LocationListContainer from './containers/LocationListContainer';
 
 
 // Cities Array while we can't get them from user
@@ -28,20 +27,7 @@ const muiTheme = getMuiTheme({
 
 class App extends Component {
 
-    constructor(){
-        super();
-        this.state = {
-            city: null
-        }
-    }
-
-    handleSelectedLocation = city => {
-        this.setState({ city });
-        this.props.setCity(city);
-    };
-
     render() {
-        const {city} = this.state;
         return (
             <MuiThemeProvider muiTheme={muiTheme}>
                 <Grid>
@@ -54,18 +40,14 @@ class App extends Component {
                         <Col xs={12} md={6}>
                             <Paper zDepth={4}>
                                 <div className="Locations">
-                                    <LocationList cities = {cities} onSelectedLocation={this.handleSelectedLocation}/>
+                                    <LocationListContainer cities={cities} />
                                 </div>
                             </Paper>
                         </Col>
                         <Col  xs={12} md={6}>
                             <Paper zDepth={4}>
                                 <div className="weatherDetail">
-                                    {
-                                        !city ?
-                                            <h2>Selecciona una ciudad</h2>:
-                                            <ForecastExtended city={ city }/>
-                                    }
+                                    <ForecastExtendedContainer/>
                                 </div>
                             </Paper>
                         </Col>
@@ -77,10 +59,4 @@ class App extends Component {
 }
 
 
-const mapDispatchToPropsActions = dispatch => ({
-    setCity: value => dispatch(setCity(value))
-});
-const AppConnected = connect(null, mapDispatchToPropsActions)(App);
-
-export default AppConnected;
-
+export default App;
