@@ -1,5 +1,4 @@
 import { createSelector } from 'reselect';
-import toPairs from 'lodash.topairs';
 import { SET_FORECAST_DATA, SET_WEATHER_CITY, GET_WEATHER_CITY } from "./../actions";
 
 export const cities = (state = {}, action) => {
