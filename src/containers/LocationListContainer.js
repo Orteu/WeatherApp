@@ -12,8 +12,7 @@ class LocationListContainer extends Component {
     }
 
     handleSelectedLocation = city => {
-        this.setState({ city });
-        this.props.dispatchSetCity(city);
+        this.props.setCity(city);
     };
 
     render() {
