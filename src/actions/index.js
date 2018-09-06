@@ -27,7 +27,7 @@ export const setSelectedCity = payload => {
         const date = state.cities[payload] && state.cities[payload].forecastDataDate;
         const now = new Date();
 
-        if (date && (now - date) > 1*60*1000){
+        if (date && (now - date) < 1*60*1000){
             return;
         }
 
